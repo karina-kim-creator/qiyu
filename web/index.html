@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>期遇 - 保质期提醒平台</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                期遇
+            </div>
+            <div class="slogan">让每一份新鲜都不期而遇</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active"><i class="fas fa-home"></i> 首页</a></li>
+                <li><a href="#market"><i class="fas fa-store"></i> 商场</a></li>
+                <li><a href="#scan"><i class="fas fa-qrcode"></i> 扫描录入</a></li>
+                <li><a href="#profile"><i class="fas fa-user"></i> 我的</a></li>
+            </ul>
+            <div class="user-actions">
+                <span class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">0</span>
+                </span>
+                <button class="login-btn">登录/注册</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面内容容器 -->
+    <div id="content">
+        <div class="pages-container">
+            <!-- 首页 -->
+            <div id="home" class="page active">
+                <!-- 版本切换 -->
+                <div class="version-switcher">
+                    <button class="version-btn active" data-version="general">通用版</button>
+                    <button class="version-btn" data-version="food">食品版</button>
+                    <button class="version-btn" data-version="cosmetic">化妆品版</button>
+                    <button class="version-btn" data-version="medicine">药品版</button>
+                </div>
+
+                <!-- 搜索栏 -->
+                <div class="search-container">
+                    <input type="text" placeholder="搜索商品名称或关键词...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+
+                <!-- 推荐商品区域 -->
+                <div class="recommendations">
+                    <h2>通用推荐</h2>
+                    <div class="recommendation-cards">
+                        <!-- 商品卡片会通过 JavaScript 动态生成 -->
+                    </div>
+                </div>
+
+                <!-- 功能模块 -->
+                <div class="feature-modules">
+                    <div class="feature-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>智能保质期提醒</h3>
+                        <p>及时提醒，避免食品过期</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-tags"></i>
+                        <h3>优惠活动</h3>
+                        <p>最新优惠，一目了然</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-search"></i>
+                        <h3>商品信息查询</h3>
+                        <p>快速查询，便捷管理</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 商场页面 -->
+            <div id="market" class="page">
+                <div class="market-container">
+                    <div class="market-header">
+                        <h2>附近商场 <span class="market-count">(8)</span></h2>
+                        <!-- 商场筛选 -->
+                        <div class="market-filters">
+                            <button class="filter-btn active" data-type="all">全部</button>
+                            <button class="filter-btn" data-type="supermarket">超市</button>
+                            <button class="filter-btn" data-type="convenience">便利店</button>
+                            <button class="filter-btn" data-type="pharmacy">药店</button>
+                            <button class="filter-btn" data-type="cosmetics">彩妆店</button>
+                        </div>
+                    </div>
+                    <div class="market-list">
+                        <!-- 超市 -->
+                        <a href="#" class="market-card" data-type="supermarket">
+                            <img src="https://img.alicdn.com/imgextra/i3/2200726525232/O1CN01qKfYxN1oG3fDxVXR5_!!2200726525232.jpg" alt="永辉超市">
+                            <div class="market-info">
+                                <h3>永辉超市</h3>
+                                <p class="distance"><i class="fas fa-map-marker-alt"></i> 500m</p>
+                                <p class="time"><i class="fas fa-clock"></i> 08:00-22:00</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="#" class="market-card" data-type="supermarket">
+                            <img src="imags/markets/market5.jpg" alt="沃尔玛">
+                            <div class="market-info">
+                                <h3>沃尔玛</h3>
+                                <p class="distance"><i class="fas fa-map-marker-alt"></i> 1.5km</p>
+                                <p class="time"><i class="fas fa-clock"></i> 08:00-23:00</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>4.7</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- 便利店 -->
+                        <a href="#" class="market-card" data-type="convenience">
+                            <img src="https://img.alicdn.com/imgextra/i4/2200726525232/O1CN01Z9ZUKX1oG3fF95nfC_!!2200726525232.jpg" alt="7-11">
+                            <div class="market-info">
+                                <h3>7-11便利店</h3>
+                                <p class="distance"><i class="fas fa-map-marker-alt"></i> 300m</p>
+                                <p class="time"><i class="fas fa-clock"></i> 24小时营业</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.0</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="#" class="market-card" data-type="convenience">
+                            <img src="imags/markets/market6.jpg" alt="全家">
+                            <div class="market-info">
+                                <h3>全家便利店</h3>
+                                <p class="distance"><i class="fas fa-map-marker-alt"></i> 400m</p>
+                                <p class="time"><i class="fas fa-clock"></i> 24小时营业</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.2</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- 药店 -->
+                        <a href="#" class="market-card" data-type="pharmacy">
+                            <img src="https://img.alicdn.com/imgextra/i2/2200726525232/O1CN01h8Zq8N1oG3fF95mJK_!!2200726525232.jpg" alt="大参林">
+                            <div class="market-info">
+                                <h3>大参林药店</h3>
+                                <p class="distance"><i class="fas fa-map-marker-alt"></i> 800m</p>
+                                <p class="time"><i class="fas fa-clock"></i> 09:00-21:00</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="#" class="market-card" data-type="pharmacy">
+                            <img src="imags/markets/market7.jpg" alt="海王星辰">
+                            <div class="market-info">
+                                <h3>海王星辰</h3>
+                                <p class="distance"><i class="fas fa-map-marker-alt"></i> 900m</p>
+                                <p class="time"><i class="fas fa-clock"></i> 09:00-22:00</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.4</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- 彩妆店 -->
+                        <a href="#" class="market-card" data-type="cosmetics">
+                            <img src="https://img.alicdn.com/imgextra/i1/2200726525232/O1CN01XvN7Tn1oG3fF95mve_!!2200726525232.jpg" alt="屈臣氏">
+                            <div class="market-info">
+                                <h3>屈臣氏</h3>
+                                <p class="distance"><i class="fas fa-map-marker-alt"></i> 1.2km</p>
+                                <p class="time"><i class="fas fa-clock"></i> 10:00-22:00</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.6</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="#" class="market-card" data-type="cosmetics">
+                            <img src="imags/markets/market8.jpg" alt="丝芙兰">
+                            <div class="market-info">
+                                <h3>丝芙兰</h3>
+                                <p class="distance"><i class="fas fa-map-marker-alt"></i> 2.0km</p>
+                                <p class="time"><i class="fas fa-clock"></i> 10:00-22:00</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>4.9</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 扫描录入页面 -->
+            <div id="scan" class="page">
+                <div class="scan-container">
+                    <div class="scan-header">
+                        <h2>扫描商品</h2>
+                        <p>将商品条形码对准扫描框</p>
+                    </div>
+                    <div class="scan-area">
+                        <div class="scan-frame">
+                            <video id="scanner" autoplay></video>
+                            <div class="scan-line"></div>
+                            <div class="scan-corners"></div>
+                            <div class="scan-guide">
+                                <i class="fas fa-crosshairs"></i>
+                            </div>
+                        </div>
+                        <div class="scan-buttons">
+                            <button class="scan-btn primary">
+                                <i class="fas fa-camera"></i>
+                                <span>开始扫描</span>
+                            </button>
+                            <button class="scan-btn">
+                                <i class="fas fa-keyboard"></i>
+                                <span>手动输入</span>
+                            </button>
+                            <button class="scan-btn">
+                                <i class="fas fa-bolt"></i>
+                                <span>闪光灯</span>
+                            </button>
+                        </div>
+                        <div class="scan-tips">
+                            <p><i class="fas fa-info-circle"></i> 扫描提示：</p>
+                            <ul>
+                                <li>请将条形码放置在扫描框内</li>
+                                <li>持手机稳定，避免晃动</li>
+                                <li>光线不足时可开启闪光灯</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 我的页面 -->
+            <div id="profile" class="page">
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <img src="../imags/default/avatar.png" alt="用户头像">
+                            <button class="edit-avatar"><i class="fas fa-camera"></i></button>
+                        </div>
+                        <div class="profile-info">
+                            <h2>用户昵称</h2>
+                            <p class="user-id">ID: 12345678</p>
+                        </div>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <h3>临期商品</h3>
+                            <p>5</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>已过期</h3>
+                            <p>2</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>正常商品</h3>
+                            <p>23</p>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="action-btn"><i class="fas fa-history"></i> 浏览记录</button>
+                        <button class="action-btn"><i class="fas fa-heart"></i> 收藏夹</button>
+                        <button class="action-btn"><i class="fas fa-cog"></i> 设置</button>
+                    </div>
+                    <div class="membership-section">
+                        <h3><i class="fas fa-crown"></i> 会员服务</h3>
+                        <div class="membership-cards">
+                            <div class="membership-card">
+                                <div class="card-header">
+                                    <h4>普通会员</h4>
+                                    <span class="badge">当前</span>
+                                </div>
+                                <ul class="benefits">
+                                    <li><i class="fas fa-check"></i> 基础保质期提醒</li>
+                                    <li><i class="fas fa-check"></i> 商品信息查询</li>
+                                    <li><i class="fas fa-check"></i> 基础��据统计</li>
+                                </ul>
+                            </div>
+                            <div class="membership-card premium">
+                                <div class="card-header">
+                                    <h4>高级会员</h4>
+                                    <button class="upgrade-btn">升级</button>
+                                </div>
+                                <ul class="benefits">
+                                    <li><i class="fas fa-check"></i> 智能保质期预警</li>
+                                    <li><i class="fas fa-check"></i> 个性化购物建议</li>
+                                    <li><i class="fas fa-check"></i> 专属优惠券</li>
+                                    <li><i class="fas fa-check"></i> 7*24小时客服</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
